@@ -4,7 +4,8 @@ from django.db import models
 
 
 class YoutubeVideo(models.Model):
-    """Database to store youtube url and the vote count.
+    """
+    Database to store youtube url and the vote count.
 
     @member_variables
     link: <string> The link to the youtube video.
