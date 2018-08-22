@@ -1,5 +1,6 @@
 from slackclient import SlackClient
 from .models import YoutubeVideo
+from pprint import pprint
 
 
 def get_video_links(slack_token, channel_id):
@@ -10,10 +11,13 @@ def get_video_links(slack_token, channel_id):
     :return:
     """
     sc = SlackClient(slack_token)
-    messages = sc.api_call("channels.history", channel=channel_id, count=10)
-    print(messages)
+    messages = sc.api_call("channels.history", channel=channel_id, count=100)
+    pprint(messages)
+    videos = YoutubeVideo.objects.all()
+    if videos:
+        videos.delete()
     if messages['ok']:
         for message in messages['messages']:
-            if 'subtype' not in message:
-                print(message['text'])
-                YoutubeVideo.objects.create(link=message['text'])
+            if 'attachments' in message:
+                print(message['attachments'][0]['from_url'])
+                YoutubeVideo.objects.create(link=message['attachments'][0]['from_url'])
