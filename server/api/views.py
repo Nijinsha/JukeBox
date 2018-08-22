@@ -1,3 +1,4 @@
+from django.db.models import F
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework import generics, permissions, response
@@ -30,3 +31,14 @@ class YoutubeVideoListView(generics.ListAPIView):
     queryset = YoutubeVideo.objects.all()
     serializer_class = YoutubeVideoSerializer
 
+
+@api_view(['GET', ])
+def vote(request, uid):
+    """
+    View function to handle voting on videos.
+    :param request: Request object.
+    :param uid: uid(pk) of the video from url parameter.
+    :return: Response object.
+    """
+    YoutubeVideo.objects.filter(id=uid).update(vote=F('vote')+1)
+    return response.Response({"uid": uid})
