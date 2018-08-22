@@ -14,7 +14,7 @@ def slack_config_view(request):
     """
     Function to get the slack configurations.
     :param request: Request Object.
-    :return:
+    :return: Response
     """
     slack_token = request.data['token']
     channel_id = request.data['channel_id']
