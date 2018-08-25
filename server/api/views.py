@@ -46,3 +46,18 @@ def vote(request, uid):
     """
     YoutubeVideo.objects.filter(id=uid).update(vote=F('vote')+1)
     return response.Response({"uid": uid})
+
+
+@api_view(['GET', ])
+def is_config_available(request):
+    """
+    View function to check whether an older configuration exists.
+    :param request: Request object.
+    :return: Response object.
+    """
+    available = False
+    slack = Slack.objects.all()
+    if slack:
+        available = True
+
+    return response.Response({"available":available})
