@@ -10,6 +10,6 @@ class YoutubeVideoSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = YoutubeVideo
-        fields = ("id", "link", "title", "thumb_url", "vote",)
-        read_only_fields = ("id", "link", "title", "thumb_url", "vote", )
+        fields = ("id", "video", "title", "thumb_url", "vote",)
+        read_only_fields = ("id", "video", "title", "thumb_url", "vote", )
 
