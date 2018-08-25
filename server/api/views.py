@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework import generics, permissions, response
 from .serializers import YoutubeVideoSerializer
-from .models import YoutubeVideo
+from .models import YoutubeVideo, Slack
 from .extras import get_video_links
 
 
@@ -19,6 +19,10 @@ def slack_config_view(request):
     """
     slack_token = request.data['token']
     channel_id = request.data['channel_id']
+    slack = Slack.objects.all()
+    if slack:
+        slack.delete()
+    Slack.objects.create(token=slack_token, channel_id=channel_id)
     get_video_links(slack_token=slack_token, channel_id=channel_id)
     return response.Response({"success": "True"})
 
