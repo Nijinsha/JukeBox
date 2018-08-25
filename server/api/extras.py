@@ -20,4 +20,6 @@ def get_video_links(slack_token, channel_id):
         for message in messages['messages']:
             if 'attachments' in message:
                 print(message['attachments'][0]['from_url'])
-                YoutubeVideo.objects.create(link=message['attachments'][0]['from_url'])
+                YoutubeVideo.objects.create(link=message['attachments'][0]['from_url'],
+                                            title=message['attachments'][0]['title'],
+                                            thumb_url=message['attachments'][0]['thumb_url'])
