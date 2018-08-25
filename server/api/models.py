@@ -5,14 +5,27 @@ from django.db import models
 
 class YoutubeVideo(models.Model):
     """
-    Database to store youtube url and the vote count.
+    Database model to store youtube video details.
 
     @member_variables
-    link: <string> The link to the youtube video.
-    title: <string> The title of the video.
-    vote: <int> The number of vot it go.
+    video: <string>Video ID of youtube video.
+    title: <string>title of the video.
+    thumb_url:<string> Url or the thumbnail of the video.
+    vote: <int>number of vote the video got.
     """
-    link = models.CharField(max_length=12)
+    video = models.CharField(max_length=10)
     title = models.CharField(max_length=100)
     thumb_url = models.CharField(max_length=50)
     vote = models.IntegerField(default=0)
+
+
+class Slack(models.Model):
+    """
+    Database Model to store the slack configuration.
+
+    @member_variables
+    token : <string> slack token to access the channel.
+    channel_id:<string> channel ID.
+    """
+    token = models.CharField(max_length=100)
+    channel_id = models.CharField(max_length=10)
