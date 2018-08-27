@@ -10,7 +10,7 @@
     1. Create a channel if none available.
     2. Create an app, add it to channel and obtain API token.
     3. Now get the channel ID from slack URL.
-        1. Open the slack the workspace in a web browser.
+        1. Open the slack workspace in a web browser.
         2. Click on the preferred channel.
         3. Get the channel ID from the URL.
         ```
