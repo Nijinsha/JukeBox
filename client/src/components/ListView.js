@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { List } from 'semantic-ui-react';
+
 import ListSegment from './ListSegment';
+
 let videoList=[];
-let abc=[{title:"kaka"},{title:"poocjha"},{title:"eli"}];
-let i=0;
+
+
 class YoutubePlayer extends Component {
     constructor(props) {
         super(props);
@@ -15,8 +17,7 @@ class YoutubePlayer extends Component {
         });
     }
     componentWillMount() {
-        
-        videoList=this.props.videoList
+        videoList=this.props.videoList;
         this.sortByVote();
     }
 
@@ -27,8 +28,7 @@ class YoutubePlayer extends Component {
                 return (
                  <ListSegment video={video} />
                 );
-                console.log(video)
-             })}
+             })};
              </List>
         );
     }
