@@ -34,3 +34,10 @@
     1. Run `npm install` followed by `npm start`.
     2. The client will be running at l`ocalhost port 3000`. 
 
+## Using Application
+1. Go to localhost:3000 in the browser.
+2. Type in the token and channel ID.
+3. Wait for it to fetch the videos.
+4. Vote on video using vote button of the corresponding video.
+5. Refresh the page to restart player with newly updated queue.
+
