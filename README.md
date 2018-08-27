@@ -7,10 +7,10 @@
 * pipenv python package (`pip install pipenv`)
 * Node 8.* (with npm)
 * Create a slack workspace.
-    1. Create an app, add it to channel or workspace and obtain API token.
-    2. Create a channel if none available.
+    1. Create a channel if none available.
+    2. Create an app, add it to channel and obtain API token.
     3. Now get the channel ID from slack URL.
-        1. Open the slack the workspace in a web browser.
+        1. Open the slack workspace in a web browser.
         2. Click on the preferred channel.
         3. Get the channel ID from the URL.
         ```
@@ -32,7 +32,7 @@
     3. The server will be running at `localhost port 8000` successfully.
 4. Change directory to client.
     1. Run `npm install` followed by `npm start`.
-    2. The client will be running at l`ocalhost port 3000`. 
+    2. The client will be running at `localhost port 3000`. 
 
 ## Using Application
 1. Go to localhost:3000 in the browser.
