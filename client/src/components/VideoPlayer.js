@@ -28,7 +28,7 @@ class VideoPlayer extends Component {
 
     render() {
         return (
-          this.state.isLoading?<Loading/>:<PlayArea/>
+          this.state.isLoading?<Loading/>:<PlayArea videoList = {this.state.videoList}/>
         );
     }
 }
