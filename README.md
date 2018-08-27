@@ -32,5 +32,5 @@
     3. The server will be running at `localhost port 8000` successfully.
 4. Change directory to client.
     1. Run `npm install` followed by `npm start`.
-    2. The client will be running at l`ocalhost port 3000`. 
+    2. The client will be running at `localhost port 3000`. 
 
