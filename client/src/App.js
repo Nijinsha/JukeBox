@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
+
+import Loading from './components/Loading';
+import VideoPlayer from './components/VideoPlayer';
+import Configure from './components/Configure';
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +18,6 @@ class App extends Component {
   componentDidMount() {
     axios.get(`http://localhost:8000/api/v1/config-available/`)
       .then(res => {
-        console.log(res.data);
         this.setState({ configurationAvailable: res.data.available });
         this.setState({ isLoading: false });
       });
@@ -21,11 +25,10 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-
-      </div>
-    );
+    return(
+      this.state.isLoading?<Loading/>:
+      (this.state.configurationAvailable?<VideoPlayer/>:<Configure/>)
+    );  
   }
 }
 
