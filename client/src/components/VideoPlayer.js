@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
+import PlayArea from './PlayArea';
+import Loading from './Loading';
 
 class VideoPlayer extends Component {
 
@@ -7,16 +10,24 @@ class VideoPlayer extends Component {
         super(props);
         this.state = {
           videoList: [],
-          isLoading: true,
-          noConfiguration:true
+          isLoading: true
         };
     
     
     }
 
+    componentDidMount() {
+        axios.get(`http://localhost:8000/api/v1/videos/`)
+          .then(res => {
+            const videoList = res.data;
+            this.setState({ videoList: videoList });
+            this.setState({ isLoading: false })
+          });
+      }
+
     render() {
         return (
-          <h1>Video Page</h1>
+          this.state.isLoading?<Loading/>:<PlayArea/>
         );
     }
 }
