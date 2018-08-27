@@ -7,8 +7,8 @@
 * pipenv python package (`pip install pipenv`)
 * Node 8.* (with npm)
 * Create a slack workspace.
-    1. Create an app, add it to channel or workspace and obtain API token.
-    2. Create a channel if none available.
+    1. Create a channel if none available.
+    2. Create an app, add it to channel and obtain API token.
     3. Now get the channel ID from slack URL.
         1. Open the slack the workspace in a web browser.
         2. Click on the preferred channel.
