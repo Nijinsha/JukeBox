@@ -19,11 +19,8 @@ class YoutubePlayer extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.videoList)
         videoList=this.props.videoList
         this.sortByVote();
-        console.log("after sort");
-        console.log(videoList[i]);
         this.setState({ videoId: videoList[i].video });
     }
 
