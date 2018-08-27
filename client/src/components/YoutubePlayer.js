@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
+
 let videoList=[];
 let i=0;
+
+
 class YoutubePlayer extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-        this.videoId=null;
+        this.videoId = null;
     }
+
     sortByVote(){
         videoList.sort(function(a, b) {
-            return parseInt(b.vote) - parseInt(a.vote);
+            return parseInt(b.vote,10) - parseInt(a.vote,10);
         });
     }
+
     componentDidMount() {
         console.log(this.props.videoList)
         videoList=this.props.videoList
