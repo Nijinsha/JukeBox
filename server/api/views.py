@@ -24,7 +24,7 @@ def slack_config_view(request):
         slack.delete()
     Slack.objects.create(token=slack_token, channel_id=channel_id)
     get_video_links(slack_token=slack_token, channel_id=channel_id)
-    return response.Response({"success": "True"})
+    return response.Response({"success": "true"})
 
 
 class YoutubeVideoListView(generics.ListAPIView):
@@ -49,7 +49,7 @@ def vote(request, uid):
 
 
 @api_view(['GET', ])
-def is_config_available(request):
+def is_config_available_view(request):
     """
     View function to check whether an older configuration exists.
     :param request: Request object.
@@ -60,4 +60,4 @@ def is_config_available(request):
     if slack:
         available = True
 
-    return response.Response({"available":available})
+    return response.Response({"available": available})
