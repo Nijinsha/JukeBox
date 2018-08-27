@@ -13,11 +13,11 @@ class YoutubePlayer extends Component {
     }
     sortByVote(){
         videoList.sort(function(a, b) {
-            return parseInt(b.vote) - parseInt(a.vote);
+            return parseInt(b.vote,10) - parseInt(a.vote,10);
         });
     }
     componentWillMount() {
-        videoList=this.props.videoList;
+        videoList = this.props.videoList;
         this.sortByVote();
     }
 
@@ -26,7 +26,7 @@ class YoutubePlayer extends Component {
             <List>
             {videoList.map((video, key) => {
                 return (
-                 <ListSegment video={video} />
+                 <ListSegment key={key} video={video} />
                 );
              })};
              </List>
