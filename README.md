@@ -15,7 +15,7 @@
         3. Get the channel ID from the URL.
         ```
         https://example-workspace.slack.com/messages/CC90T1PTP/
-        CC90T1TP in the url is the channel ID
+        CC90T1PTP in the url is the channel ID
 
         ```
  * Add some youtube videos to the slack channel.
