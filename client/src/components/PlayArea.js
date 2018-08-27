@@ -7,6 +7,7 @@ import YoutubePlayer from './YoutubePlayer';
 
 
 class PlayerArea extends Component {
+
     render() {
         return (
             <div>
@@ -17,10 +18,10 @@ class PlayerArea extends Component {
                 </Grid>
                 <Grid divided>
                     <Grid.Column width={7} className="list-view">
-                        <ListView videoList={this.state.videoList} />
+                        <ListView videoList={this.props.videoList} />
                     </Grid.Column>
                     <Grid.Column width={8}>
-                        <YoutubePlayer videoList={this.state.videoList} />
+                        <YoutubePlayer videoList={this.props.videoList} />
                     </Grid.Column>
                     <Grid.Column width={1}>
                     </Grid.Column>
