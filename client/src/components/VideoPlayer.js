@@ -4,6 +4,7 @@ import axios from 'axios';
 import PlayArea from './PlayArea';
 import Loading from './Loading';
 
+
 class VideoPlayer extends Component {
 
     constructor(props) {
